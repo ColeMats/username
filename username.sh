@@ -3,9 +3,11 @@
 # Cole Matsueda
 echo "Enter a Username: "
 read USERNAME
-while echo "$USERNAME" | egrep -v "^[0-9]{3,12}[a-z]{3,12}$" > /dev/null 2>&1
+while echo "$USERNAME" | egrep -v "^[a-z][0-9a-z]{2,11}[a-z_]$" > /dev/null 2>&1
 do
-	echo "You must enter a valid Username - 3-12 digits and must start with a lowercase letter!"
+	echo "Username can only have lower case letters, numbers, or underscores."
+	echo "Username must start with a lower case letter."
+	echo "Username must contain at least 3 three characters but no more than 12."
 	echo "Enter a Username: "
 	read USERNAME
 done
